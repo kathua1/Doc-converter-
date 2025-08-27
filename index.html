@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Automatic Document Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Automatic Document Converter</h1>
+    <p>Convert between Image, PDF, Word, Excel and PowerPoint — client-side, privacy-friendly.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Image → PDF</h2>
+      <input id="imgToPdfInput" type="file" accept="image/*" multiple />
+      <button id="imgToPdfBtn">Convert to PDF</button>
+      <a id="imgToPdfDownload" class="hidden" download="images.pdf">Download PDF</a>
+    </section>
+
+    <section class="card">
+      <h2>PDF → Images</h2>
+      <input id="pdfToImgInput" type="file" accept="application/pdf" />
+      <button id="pdfToImgBtn">Extract Images</button>
+      <div id="pdfImgResults"></div>
+    </section>
+
+    <section class="card">
+      <h2>PDF → Word (.docx)</h2>
+      <input id="pdfToDocxInput" type="file" accept="application/pdf" />
+      <button id="pdfToDocxBtn">Convert to .docx</button>
+      <a id="pdfToDocxDownload" class="hidden" download="converted.docx">Download .docx</a>
+      <p class="note">This conversion places page images into the Word document (visual copy).</p>
+    </section>
+
+    <section class="card">
+      <h2>PDF → Excel (.xlsx)</h2>
+      <input id="pdfToXlsxInput" type="file" accept="application/pdf" />
+      <button id="pdfToXlsxBtn">Convert to .xlsx</button>
+      <a id="pdfToXlsxDownload" class="hidden" download="converted.xlsx">Download .xlsx</a>
+      <p class="note">Extracts text per page and places into separate rows. Complex tables may not preserve layout.</p>
+    </section>
+
+    <section class="card">
+      <h2>DOCX → PDF</h2>
+      <input id="docxToPdfInput" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+      <button id="docxToPdfBtn">Convert to PDF</button>
+      <a id="docxToPdfDownload" class="hidden" download="converted.pdf">Download PDF</a>
+      <p class="note">Conversion uses HTML rendering; complex styling may differ.</p>
+    </section>
+
+    <section class="card">
+      <h2>Image(s) → PowerPoint (.pptx)</h2>
+      <input id="imgToPptxInput" type="file" accept="image/*" multiple />
+      <button id="imgToPptxBtn">Create PPTX</button>
+      <a id="imgToPptxDownload" class="hidden" download="presentation.pptx">Download PPTX</a>
+    </section>
+
+    <footer>
+      <p>Built for GitHub Pages — open-source. All conversions run in your browser (no upload).</p>
+    </footer>
+  </main>
+
+  <!-- Libraries from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.8.162/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/file-saver/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.3.0/browser/docx.7.3.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.19/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.11.0/pptxgen.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
